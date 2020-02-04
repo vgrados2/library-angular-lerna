@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'lib-commons',
   template: `
     <p>
-      commons works 123456!
+      commons works 123456789!
     </p>
   `,
   styles: []
