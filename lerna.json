@@ -1,6 +1,6 @@
 {
   "packages": [
-    "projects/*"
+    "projects/assi/*"
   ],
   "version": "independent"
 }
