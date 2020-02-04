@@ -2,5 +2,76 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "@assi/core": {
+      "projectType": "library",
+      "root": "projects/assi/core",
+      "sourceRoot": "projects/assi/core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/assi/core/tsconfig.lib.json",
+            "project": "projects/assi/core/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/assi/core/src/test.ts",
+            "tsConfig": "projects/assi/core/tsconfig.spec.json",
+            "karmaConfig": "projects/assi/core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/assi/core/tsconfig.lib.json",
+              "projects/assi/core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "@assi/commons": {
+      "projectType": "library",
+      "root": "projects/assi/commons",
+      "sourceRoot": "projects/assi/commons/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/assi/commons/tsconfig.lib.json",
+            "project": "projects/assi/commons/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/assi/commons/src/test.ts",
+            "tsConfig": "projects/assi/commons/tsconfig.spec.json",
+            "karmaConfig": "projects/assi/commons/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/assi/commons/tsconfig.lib.json",
+              "projects/assi/commons/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "@assi/core"
 }

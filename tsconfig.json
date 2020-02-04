@@ -17,7 +17,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@assi/core": [
+        "dist/assi/core"
+      ],
+      "@assi/core/*": [
+        "dist/assi/core/*"
+      ],
+      "@assi/commons": [
+        "dist/assi/commons"
+      ],
+      "@assi/commons/*": [
+        "dist/assi/commons/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
